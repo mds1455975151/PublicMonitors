@@ -1,9 +1,14 @@
 # -*- coding: utf-8 -*-
+
+import sys
 import smtplib, re
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 from email.mime.application import MIMEApplication
 from Log import *
+
+reload(sys)
+sys.setdefaultencoding('utf-8')
 
 NAME, VERSION, AUTHOR, LICENSE = "Public Monitor", "V0.1", "咚咚呛", "Public (FREE)"
 
