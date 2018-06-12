@@ -63,6 +63,7 @@ class Send_Email:
             msgAlternative.attach(MIMEText(msg_html, 'html', 'utf-8'))
         else:
             part = MIMEText("端口服务详情请参照附件信息。\n注：端口服务信息并未改变，且不存在弱口令信息")
+            part.add_header("Content-Type",'text/plain; charset="utf-8"')
             msg.attach(part)
         if self.xlsfile:
             part = MIMEApplication(open(self.xlsfile, 'rb').read())
