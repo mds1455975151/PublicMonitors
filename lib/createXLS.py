@@ -16,7 +16,7 @@ class Create_Xls:
     def create_xls(self):
         file = Workbook(encoding='utf-8')
         table = {}
-        applications = [u'公网开发端口服务详情', u'新增端口服务详情', u'减少端口服务详情', u'弱口令风险']
+        applications = [u'公网开放端口服务详情', u'新增端口服务详情', u'减少端口服务详情', u'弱口令风险']
         for application in applications:
             sheet_name = file.add_sheet(application)
             table[application] = sheet_name
@@ -34,7 +34,7 @@ class Create_Xls:
             sheet_name.write(0, 3, u'协议' if application != u'弱口令风险' else u'账户', style)
             sheet_name.write(0, 4, u'状态' if application != u'弱口令风险' else u'密码', style)
 
-            if application == u'公网开发端口服务详情':
+            if application == u'公网开放端口服务详情':
                 results = self.result_info
             elif application == u'新增端口服务详情':
                 results = self.change_add_list
